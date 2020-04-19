@@ -78,6 +78,15 @@ describe Daru::Vector do
     end
   end
 
+  context "#log" do
+    it "calculates log of all numbers" do
+      vector = Daru::Vector.new([2.718281828459045,
+        7.38905609893065, 20.085536923187668, nil, 148.4131591025766, nil], index:
+        [:a, :b, :c, :obi, :wan, :corona], name: :missing).round(3)
+      expect(vector.log.round(3)).to eq(@with_md1.round(3))
+    end
+  end
+
   context "#add" do
 
     it "adds two vectors with nils as 0 if skipnil is true" do

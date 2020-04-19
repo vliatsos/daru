@@ -145,4 +145,20 @@ describe Daru::DataFrame do
       expect_correct_df_in_delta(df.exp, ans, 0.0001)
     end
   end
+  context "#log" do
+    it "calculates logarithm" do
+      e = Math::E
+      ans = Daru::DataFrame.new({
+        a: [1,2,3],
+        b: [4,5,6],
+        c: %w(a b c)
+      })
+      df = Daru::DataFrame.new({
+        a: [e, e**2, e**3],
+        b: [e**4, e**5, e**6],
+      })
+
+      expect_correct_df_in_delta(df.log, ans, 0.0001)
+    end
+  end
 end

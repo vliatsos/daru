@@ -33,9 +33,14 @@ module Daru
           binary_operation :**, other
         end
 
-        # Calculate exponenential of all vectors with numeric values.
+        # Calculate exponential of all vectors with numeric values.
         def exp
           only_numerics(clone: false).recode(&:exp)
+        end
+
+        # Calculate log of all vectors with numeric values.
+        def log
+          only_numerics(clone: false).recode(&:log)
         end
 
         # Calcuate square root of numeric vectors.

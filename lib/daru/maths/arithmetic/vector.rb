@@ -30,6 +30,10 @@ module Daru
           math_unary_op :exp
         end
 
+        def log
+          math_unary_op :log
+        end
+
         def sqrt
           math_unary_op :sqrt
         end
